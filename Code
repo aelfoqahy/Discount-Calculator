@@ -1,0 +1,16 @@
+def discount_calculator(price, discount):
+    if not isinstance(price, (int, float)):
+        return 'Price shoulde be a number'
+    elif not isinstance(discount, (int, float)):
+        return 'Discount should be a number'
+
+    if price < 0:
+        return 'Price should be greater than 0'
+    elif discount < 0 or discount > 100:
+        return 'Discount should be between 0 and 100'
+
+    discount_value = price - (price * (discount / 100))
+    return f'Discount: {discount_value}'
+
+final_price = discount_calculator(500, 25)
+print(final_price)
